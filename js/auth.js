@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Verificar credenciales
             else if (
-            email !== 'admin@biblioweb.test' ||
-            pass !== 'Admin123'
+                email !== 'admin@biblioweb.test' ||
+                pass !== 'Admin123'
             ) {
                 mensaje = 'Usuario o contraseña incorrectos.';
                 tipo = 'alert-warning';
