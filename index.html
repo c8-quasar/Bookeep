@@ -5,29 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookeep | BiblioWeb</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:wght@500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css /base.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/base.css">
 </head>
 
 <body>
     <!-- 1. Header-->
     <header class="topbar">
-        <div>
-            <img src="./img/Bookeep.png" alt="Logo de Biblioteca Bookeep" class="img-fluid">
-            <h1 class="brand">Bookeep | BiblioWeb</h1>
-            <p class="text-muted-bk">Tu biblioteca digital, a un clic de distancia</p>
-
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="#inicio" class="navlink active">Inicio</a></li>
-                    <li><a href="#servicios" class="navlink">Servicios</a></li>
-                    <li><a href="#horarios" class="navlink">Horarios</a></li>
-                    <li><a href="#contacto" class="navlink">Contacto</a></li>
-                </ul>
+        <div class="container d-flex align-items-center gap-3 py-2">
+            <a class="brand d-flex align-items-center gap-2" href="index.html">
+                <i class="bi bi-book-half text-gold fs-3"></i>
+                <span>BOOKEEP<small>BIBLIOTECA</small></span>
+            </a>
+            <nav class="d-none d-lg-flex gap-1 ms-3">
+                <a class="navlink" href="index.html">Inicio</a>
+                <a class="navlink active" href="catalogo.html">Catálogo</a>
+                <a class="navlink" href="admin.html">Administración</a>
             </nav>
-
-            <div class="login">
-                <a class="btn-line">Iniciar Sesión</a>
-                <a class="btn-gold">Registrarse</a>
+            <div class="ms-auto d-flex align-items-center gap-2">
+                <input class="form-control form-control-sm d-none d-md-block" style="width: 220px" id="q" type="search"
+                    placeholder="Buscar título o autor" aria-label="Buscar" />
+                <a class="btn btn-gold btn-sm d-none d-sm-inline-block" href="login.html">Mi cuenta </a>
+                <button class="btn btn-line btn-sm theme-btn" id="themeToggleBtn" data-theme-toggle
+                    aria-label="Cambiar tema">
+                    <i class="bi bi-moon-stars"></i><i class="bi bi-sun"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -36,7 +44,8 @@
     <section id="inicio" class="hero">
         <div>
             <div>
-                <p class="text-muted-bk">Descubre, organiza y accede a miles de libros, recursos académicos y material exclusivo desde
+                <p class="text-muted-bk">Descubre, organiza y accede a miles de libros, recursos académicos y
+                    material exclusivo desde
                     cualquier lugar y en cualquier momento.</p>
 
                 <div>
@@ -57,7 +66,8 @@
         <div>
             <div>
                 <h2>Nuestros Servicios</h2>
-                <p class="text-muted-bk">Diseñados para facilitarte el acceso al conocimiento y optimizar tus tiempos de estudio o lectura.
+                <p class="text-muted-bk">Diseñados para facilitarte el acceso al conocimiento y optimizar tus
+                    tiempos de estudio o lectura.
                 </p>
             </div>
 
@@ -66,7 +76,8 @@
                 <article class="service-card card-bk">
                     <div class="service-icon">📚</div>
                     <h3>Préstamo Digital</h3>
-                    <p>Acceso inmediato a nuestra colección de e-books y audiolibros disponibles para reserva inmediata.
+                    <p>Acceso inmediato a nuestra colección de e-books y audiolibros disponibles para reserva
+                        inmediata.
                     </p>
                 </article>
 
@@ -74,14 +85,16 @@
                 <article class="service-card card-bk">
                     <div class="service-icon">🖥️</div>
                     <h3>Salas de Estudio</h3>
-                    <p>Reserva espacios individuales y de trabajo colaborativo equipados con la mejor tecnología.</p>
+                    <p>Reserva espacios individuales y de trabajo colaborativo equipados con la mejor tecnología.
+                    </p>
                 </article>
 
                 <!-- Servicio 3 -->
                 <article class="service-card card-bk">
                     <div class="service-icon">🔍</div>
                     <h3>Búsqueda Avanzada</h3>
-                    <p>Filtros inteligentes por autor, categoría, año y disponibilidad en tiempo real en nuestra red.
+                    <p>Filtros inteligentes por autor, categoría, año y disponibilidad en tiempo real en nuestra
+                        red.
                     </p>
                 </article>
 
@@ -100,14 +113,16 @@
         <div class="container">
             <div>
                 <h2>Horarios de Atención</h2>
-                <p class="text-muted-bk">Consulta nuestra disponibilidad tanto en plataforma digital como en atención presencial.</p>
+                <p class="text-muted-bk">Consulta nuestra disponibilidad tanto en plataforma digital como en
+                    atención presencial.</p>
             </div>
 
             <div class="schedule">
                 <div class="schedule-card card-bk">
                     <h3>🌐 Plataforma Online</h3>
                     <p>Disponible 24/7</p>
-                    <p>Acceso a catálogos, descargas y préstamos digitales las 24 horas del día, los 365 días del año.
+                    <p>Acceso a catálogos, descargas y préstamos digitales las 24 horas del día, los 365 días del
+                        año.
                     </p>
                 </div>
 
@@ -136,14 +151,18 @@
     <section class="hero">
         <div>
             <h2>¿Listo para empezar tu próxima lectura?</h2>
-            <p class="text-muted-bk">Crea tu cuenta gratuita hoy mismo y accede sin límites a todo nuestro catálogo digital.</p>
+            <p class="text-muted-bk">Crea tu cuenta gratuita hoy mismo y accede sin límites a todo nuestro catálogo
+                digital.</p>
             <a class="btn-gold">Realizar solicitud de tu próxima lectura.</a>
         </div>
     </section>
 
-    <footer id="contacto" class="final">
-        <p><strong>Bookeep</strong>| BiblioWeb</p>
-        <p>&copy; 2026 Bookeep</p>
+    <footer class="mt-5 py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+            <span class="serif text-gold fs-5">Bookeep</span>
+            <span>Colecciones, préstamos y acervo bibliográfico.</span>
+            <span>© 2026 Bookeep Biblioteca</span>
+        </div>
     </footer>
 
 </body>
