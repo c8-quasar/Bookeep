@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administración | BiblioWeb</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:wght@600;700&display=swap"
+        rel="stylesheet">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <header class="topbar">
+        <div class="container d-flex align-items-center justify-content-between py-3">
+
+            <a href="index.html" class="brand">
+                BIBLIOWEB
+                <small>BIBLIOTECA</small>
+            </a>
+
+            <!-- Enlaces: se ocultan en celular (ahí se usa la barra inferior) -->
+            <nav class="d-none d-lg-flex gap-1" aria-label="Navegación principal">
+                <a href="index.html" class="navlink">Inicio</a>
+                <a href="catalogo.html" class="navlink">Catálogo</a>
+                <a href="admin.html" class="navlink active" aria-current="page">Administración</a>
+            </nav>
+
+            <div class="d-flex gap-2">
+                <!-- Botón de tema: lo conecta js/tema.js (Integrante 1) -->
+                <button type="button" id="btnTema" class="btn btn-line theme-btn"
+                    aria-label="Cambiar tema claro u oscuro">
+                    <i class="bi bi-moon-stars"></i>
+                    <i class="bi bi-sun"></i>
+                </button>
+                <!-- Cerrar sesión: lo conecta js/auth.js (Integrante 1) -->
+                <button type="button" id="btnCerrarSesion" class="btn btn-line">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span class="d-none d-sm-inline">Cerrar sesión</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="container py-4 py-lg-5">
+
+        <div class="mb-4">
+            <p class="eyebrow mb-1">Panel privado</p>
+            <h1 class="h2 mb-1">Administración</h1>
+            <p class="text-muted-bk mb-0">Gestiona los libros del catálogo y consulta las solicitudes de préstamo.</p>
+        </div>
+
+        <div class="row g-3 mb-5">
+            <div class="col-12 col-sm-4">
+                <div class="card-bk p-3 stat">
+                    <b>6</b>
+                    <span class="text-muted-bk small">Libros en el catálogo</span>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4">
+                <div class="card-bk p-3 stat">
+                    <b>4</b>
+                    <span class="text-muted-bk small">Solicitudes pendientes</span>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4">
+                <div class="card-bk p-3 stat">
+                    <b>3</b>
+                    <span class="text-muted-bk small">Categorías</span>
+                </div>
+            </div>
+        </div>
+
+        <section class="mb-5" aria-labelledby="titulo-formulario">
+            <p class="eyebrow mb-1">Libros</p>
+            <h2 class="h4 mb-3" id="titulo-formulario">Agregar o editar libro</h2>
+
+            <div class="card-bk p-3 p-md-4">
+                <form>
+                    <div class="row g-3">
+
+                        <div class="col-12 col-md-6">
+                            <label for="titulo" class="form-label">Título</label>
+                            <input type="text" class="form-control" id="titulo" placeholder="Ej: Cien años de soledad">
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="autor" class="form-label">Autor</label>
+                            <input type="text" class="form-control" id="autor" placeholder="Ej: Gabriel García Márquez">
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="portada" class="form-label">Portada (URL)</label>
+                            <input type="url" class="form-control" id="portada"
+                                placeholder="https://ejemplo.com/portada.jpg">
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="categoria" class="form-label">Categoría</label>
+                            <select class="form-select" id="categoria">
+                                <option selected>Selecciona una categoría</option>
+                                <option value="narrativa">Narrativa</option>
+                                <option value="tecnologia">Tecnología</option>
+                                <option value="ciencia">Ciencia</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="descripcion" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="descripcion" rows="3"
+                                placeholder="Escribe una descripción breve del libro"></textarea>
+                        </div>
+
+                        <div class="col-12 d-flex flex-wrap gap-2">
+                            <button type="button" class="btn btn-gold">
+                                <i class="bi bi-check2-circle"></i> Guardar
+                            </button>
+                            <button type="button" class="btn btn-line">
+                                Cancelar
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="mb-5" aria-labelledby="titulo-libros">
+            <p class="eyebrow mb-1">Catálogo</p>
+            <h2 class="h4 mb-3" id="titulo-libros">Libros registrados</h2>
+
+            <div class="card-bk p-2 p-md-3">
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">Portada</th>
+                                <th scope="col">Título</th>
+                                <th scope="col">Autor</th>
+                                <th scope="col">Categoría</th>
+                                <th scope="col" class="text-end">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td><img src="https://picsum.photos/seed/libro1/60/80" width="48" height="64"
+                                        class="rounded" alt="Portada de Cien años de soledad"></td>
+                                <td class="serif">Cien años de soledad</td>
+                                <td>Gabriel García Márquez</td>
+                                <td><span class="badge badge-bk">Narrativa</span></td>
+                                <td class="text-end text-nowrap">
+                                    <button type="button" class="btn btn-sm btn-line"><i
+                                            class="bi bi-pencil-square"></i> Editar</button>
+                                    <button type="button" class="btn btn-sm btn-wine"><i class="bi bi-trash"></i>
+                                        Eliminar</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><img src="https://picsum.photos/seed/libro2/60/80" width="48" height="64"
+                                        class="rounded" alt="Portada de El coronel no tiene quien le escriba"></td>
+                                <td class="serif">El coronel no tiene quien le escriba</td>
+                                <td>Gabriel García Márquez</td>
+                                <td><span class="badge badge-bk">Narrativa</span></td>
+                                <td class="text-end text-nowrap">
+                                    <button type="button" class="btn btn-sm btn-line"><i
+                                            class="bi bi-pencil-square"></i> Editar</button>
+                                    <button type="button" class="btn btn-sm btn-wine"><i class="bi bi-trash"></i>
+                                        Eliminar</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><img src="https://picsum.photos/seed/libro3/60/80" width="48" height="64"
+                                        class="rounded" alt="Portada de Código limpio"></td>
+                                <td class="serif">Código limpio</td>
+                                <td>Robert C. Martin</td>
+                                <td><span class="badge badge-bk">Tecnología</span></td>
+                                <td class="text-end text-nowrap">
+                                    <button type="button" class="btn btn-sm btn-line"><i
+                                            class="bi bi-pencil-square"></i> Editar</button>
+                                    <button type="button" class="btn btn-sm btn-wine"><i class="bi bi-trash"></i>
+                                        Eliminar</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><img src="https://picsum.photos/seed/libro4/60/80" width="48" height="64"
+                                        class="rounded" alt="Portada de El programador pragmático"></td>
+                                <td class="serif">El programador pragmático</td>
+                                <td>Andrew Hunt y David Thomas</td>
+                                <td><span class="badge badge-bk">Tecnología</span></td>
+                                <td class="text-end text-nowrap">
+                                    <button type="button" class="btn btn-sm btn-line"><i
+                                            class="bi bi-pencil-square"></i> Editar</button>
+                                    <button type="button" class="btn btn-sm btn-wine"><i class="bi bi-trash"></i>
+                                        Eliminar</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><img src="https://picsum.photos/seed/libro5/60/80" width="48" height="64"
+                                        class="rounded" alt="Portada de Cosmos"></td>
+                                <td class="serif">Cosmos</td>
+                                <td>Carl Sagan</td>
+                                <td><span class="badge badge-bk">Ciencia</span></td>
+                                <td class="text-end text-nowrap">
+                                    <button type="button" class="btn btn-sm btn-line"><i
+                                            class="bi bi-pencil-square"></i> Editar</button>
+                                    <button type="button" class="btn btn-sm btn-wine"><i class="bi bi-trash"></i>
+                                        Eliminar</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><img src="https://picsum.photos/seed/libro6/60/80" width="48" height="64"
+                                        class="rounded" alt="Portada de Breve historia del tiempo"></td>
+                                <td class="serif">Breve historia del tiempo</td>
+                                <td>Stephen Hawking</td>
+                                <td><span class="badge badge-bk">Ciencia</span></td>
+                                <td class="text-end text-nowrap">
+                                    <button type="button" class="btn btn-sm btn-line"><i
+                                            class="bi bi-pencil-square"></i> Editar</button>
+                                    <button type="button" class="btn btn-sm btn-wine"><i class="bi bi-trash"></i>
+                                        Eliminar</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5" aria-labelledby="titulo-solicitudes">
+            <p class="eyebrow mb-1">Préstamos</p>
+            <h2 class="h4 mb-3" id="titulo-solicitudes">Solicitudes recibidas</h2>
+
+            <div class="card-bk p-2 p-md-3">
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Libro solicitado</th>
+                                <th scope="col">Solicitante</th>
+                                <th scope="col">Correo</th>
+                                <th scope="col">Comentario</th>
+                                <th scope="col">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <th scope="row">001</th>
+                                <td class="serif">Cien años de soledad</td>
+                                <td>Laura Gómez</td>
+                                <td>laura.gomez@correo.test</td>
+                                <td class="text-muted-bk">Lo necesito para una tarea de literatura.</td>
+                                <td><span class="badge badge-wine">Pendiente</span></td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">002</th>
+                                <td class="serif">Código limpio</td>
+                                <td>Carlos Ramírez</td>
+                                <td>carlos.ramirez@correo.test</td>
+                                <td class="text-muted-bk">Estoy aprendiendo programación.</td>
+                                <td><span class="badge badge-wine">Pendiente</span></td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">003</th>
+                                <td class="serif">Cosmos</td>
+                                <td>Andrea Torres</td>
+                                <td>andrea.torres@correo.test</td>
+                                <td class="text-muted-bk">—</td>
+                                <td><span class="badge badge-wine">Pendiente</span></td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">004</th>
+                                <td class="serif">Breve historia del tiempo</td>
+                                <td>Miguel Pérez</td>
+                                <td>miguel.perez@correo.test</td>
+                                <td class="text-muted-bk">Quisiera retirarlo la próxima semana.</td>
+                                <td><span class="badge badge-wine">Pendiente</span></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-4">
+        <div class="container text-center">
+            &copy; 2026 BiblioWeb — Prototipo educativo
+        </div>
+    </footer>
+
+
+    <nav class="tabbar d-lg-none" aria-label="Navegación móvil">
+        <a href="index.html"><i class="bi bi-house"></i>Inicio</a>
+        <a href="catalogo.html"><i class="bi bi-book"></i>Catálogo</a>
+        <a href="admin.html" class="active" aria-current="page"><i class="bi bi-gear"></i>Admin</a>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/tema.js"></script>
+</body>
+
+</html>
