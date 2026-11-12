@@ -7,7 +7,7 @@
     --bk-wine: #9E2A2B;
     --bk-text: #e8e2d6;
     --bk-muted: #a39a88;
-        /* Variables de Bootstrap */
+    /* Variables de Bootstrap */
     --bs-body-bg: var(--bk-bg);
     --bs-body-color: var(--bk-text);
     --bs-secondary-color: var(--bk-muted);
@@ -317,6 +317,23 @@ a:focus-visible,
 button:focus-visible {
     outline: 2px solid var(--bk-gold);
     outline-offset: 2px
+}
+
+.navlink:hover {
+    color: var(--bk-gold);
+}
+
+.cover img {
+    border-radius: inherit;
+}
+
+.service-card {
+    transition: transform .2s ease, border-color .2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--bk-gold);
 }
 
 footer {

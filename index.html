@@ -17,21 +17,28 @@
 
 <body>
     <!-- 1. Header-->
-    <header class="topbar">
-        <div class="container d-flex align-items-center gap-3 py-2">
-            <a class="brand d-flex align-items-center gap-2" href="index.html">
+    <header class="topbar sticky-top">
+        <div class="container d-flex align-items-center justify-content-between gap-3 py-2">
+
+            <a class="brand d-flex align-items-center gap-2 flex-shrink-0" href="index.html">
                 <i class="bi bi-book-half text-gold fs-3"></i>
                 <span>BOOKEEP<small>BIBLIOTECA</small></span>
             </a>
-            <nav class="d-none d-lg-flex gap-1 ms-3">
-                <a class="navlink" href="index.html">Inicio</a>
-                <a class="navlink active" href="catalogo.html">Catálogo</a>
+
+            <nav class="d-none d-lg-flex align-items-center gap-1 me-auto ms-3">
+                <a class="navlink active" href="index.html">Inicio</a>
+                <a class="navlink" href="catalogo.html" aria-current="page">Catálogo</a>
                 <a class="navlink" href="admin.html">Administración</a>
             </nav>
-            <div class="ms-auto d-flex align-items-center gap-2">
+
+            <div class="d-flex align-items-center gap-2 ms-auto ">
                 <input class="form-control form-control-sm d-none d-md-block" style="width: 220px" id="q" type="search"
                     placeholder="Buscar título o autor" aria-label="Buscar" />
-                <a class="btn btn-gold btn-sm d-none d-sm-inline-block" href="login.html">Mi cuenta </a>
+
+                <a class="btn btn-gold btn-sm d-none d-sm-inline-flex align-items-center gap-1" href="login.html">
+                    <i class="bi bi-person-circle"></i>Mi cuenta
+                </a>
+
                 <button class="btn btn-line btn-sm theme-btn" id="themeToggleBtn" data-theme-toggle
                     aria-label="Cambiar tema">
                     <i class="bi bi-moon-stars"></i><i class="bi bi-sun"></i>
@@ -41,119 +48,171 @@
     </header>
 
     <!-- 2. Section firts-->
-    <section id="inicio" class="hero">
-        <div>
-            <div>
-                <p class="text-muted-bk">Descubre, organiza y accede a miles de libros, recursos académicos y
-                    material exclusivo desde
-                    cualquier lugar y en cualquier momento.</p>
+    <section id="inicio" class="hero py-5">
+        <div class="container">
+            <div class="row align-items-center g-4 g-lg-5 py-lg-4">
 
-                <div>
-                    <a class="btn-gold">Explorar Catálogo</a>
-                    <a class="btn-line">Conocer Servicios</a>
+                <div class="col-12 col-lg-6 text-center text-lg-start">
+                    <p class="eyebrow mb-2">Tu biblioteca digital</p>
+                    <h1 class="display-5 mb-3">Bienvenido a BOOKEEP</h1>
+                    <p class="text-muted-bk fs-5 mb-4">
+                        Descubre, organiza y accede a miles de libros, recursos académicos y
+                        material exclusivo desde cualquier lugar y en cualquier momento.
+                    </p>
+
+                    <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+                        <a class="btn btn-gold btn-lg px-4" href="catalogo.html">Explorar Catálogo</a>
+                        <a class="btn btn-line btn-lg px-4" href="#servicios">Conocer Servicios</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="cover">
-                <img src="./img/leer.jpg" alt="Ilustración de persona leyendo libros en digital">
+                <div class="col-12 col-lg-6">
+                    <div class="cover p-0 overflow-hidden shadow">
+                        <img src="./img/leer.jpg" alt="Ilustración de persona leyendo libros en digital"
+                            class="img-fluid w-100 h-100 object-fit-cover">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 3. Servicios-->
+    <section id="servicios" class="py-5">
+        <div class="container">
 
-    <section id="servicios">
-        <div>
-            <div>
-                <h2>Nuestros Servicios</h2>
-                <p class="text-muted-bk">Diseñados para facilitarte el acceso al conocimiento y optimizar tus
+            <div class="text-center mx-auto mb-5" style="max-width: 640px">
+                <p class="eyebrow mb-2">Lo que ofrecemos</p>
+                <h2 class="display-6 mb-3">Nuestros Servicios</h2>
+                <p class="text-muted-bk mb-0">
+                    Diseñados para facilitarte el acceso al conocimiento y optimizar tus
                     tiempos de estudio o lectura.
                 </p>
             </div>
 
-            <div class="services-grid">
+
+            <div class="row g-4">
                 <!-- Servicio 1 -->
-                <article class="service-card card-bk">
-                    <div class="service-icon">📚</div>
-                    <h3>Préstamo Digital</h3>
-                    <p>Acceso inmediato a nuestra colección de e-books y audiolibros disponibles para reserva
-                        inmediata.
-                    </p>
-                </article>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <article class="service-card card-bk h-100 p-4 text-center">
+                        <div class="service-icon fs-1 mb-3">📚</div>
+                        <h3 class="h5 mb-2">Préstamo Digital</h3>
+                        <p class="text-muted-bk small mb-0">
+                            Acceso inmediato a nuestra colección de e-books y audiolibros disponibles para reserva
+                            inmediata.
+                        </p>
+                    </article>
+                </div>
 
                 <!-- Servicio 2 -->
-                <article class="service-card card-bk">
-                    <div class="service-icon">🖥️</div>
-                    <h3>Salas de Estudio</h3>
-                    <p>Reserva espacios individuales y de trabajo colaborativo equipados con la mejor tecnología.
-                    </p>
-                </article>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <article class="service-card card-bk h-100 p-4 text-center">
+                        <div class="service-icon fs-1 mb-3">🖥️</div>
+                        <h3 class="h5 mb-2">Salas de Estudio</h3>
+                        <p class="text-muted-bk small mb-0">
+                            Reserva espacios individuales y de trabajo colaborativo equipados con la mejor tecnología.
+                        </p>
+                    </article>
+                </div>
 
                 <!-- Servicio 3 -->
-                <article class="service-card card-bk">
-                    <div class="service-icon">🔍</div>
-                    <h3>Búsqueda Avanzada</h3>
-                    <p>Filtros inteligentes por autor, categoría, año y disponibilidad en tiempo real en nuestra
-                        red.
-                    </p>
-                </article>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <article class="service-card card-bk h-100 p-4 text-center">
+                        <div class="service-icon fs-1 mb-3">🔍</div>
+                        <h3 class="h5 mb-2">Búsqueda Avanzada</h3>
+                        <p class="text-muted-bk small mb-0">
+                            Filtros inteligentes por autor, categoría, año y disponibilidad en tiempo real en nuestra
+                            red.
+                        </p>
+                    </article>
+                </div>
 
                 <!-- Servicio 4 -->
-                <article class="service-card card-bk">
-                    <div class="service-icon">🎓</div>
-                    <h3>Asesoría Académica</h3>
-                    <p>Soporte especializado de nuestros bibliotecarios para investigaciones y proyectos.</p>
-                </article>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <article class="service-card card-bk h-100 p-4 text-center">
+                        <div class="service-icon fs-1 mb-3">🎓</div>
+                        <h3 class="h5 mb-2">Asesoría Académica</h3>
+                        <p class="text-muted-bk small mb-0">
+                            Soporte especializado de nuestros bibliotecarios para investigaciones y proyectos.
+                        </p>
+                    </article>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- 4. Horarios-->
-    <section id="horarios" class="schedule">
+    <section id="horarios" class="py-5">
         <div class="container">
-            <div>
-                <h2>Horarios de Atención</h2>
-                <p class="text-muted-bk">Consulta nuestra disponibilidad tanto en plataforma digital como en
-                    atención presencial.</p>
+
+
+            <div class="text-center mx-auto mb-5" style="max-width: 640px">
+                <p class="eyebrow mb-2">Cuándo visitarnos</p>
+                <h2 class="display-6 mb-3">Horarios de Atención</h2>
+                <p class="text-muted-bk mb-0">
+                    Consulta nuestra disponibilidad tanto en plataforma digital como en
+                    atención presencial.
+                </p>
             </div>
 
-            <div class="schedule">
-                <div class="schedule-card card-bk">
-                    <h3>🌐 Plataforma Online</h3>
-                    <p>Disponible 24/7</p>
-                    <p>Acceso a catálogos, descargas y préstamos digitales las 24 horas del día, los 365 días del
-                        año.
-                    </p>
+            <!-- Tarjetas de horarios -->
+            <div class="row g-4 justify-content-center">
+                <!-- Plataforma online -->
+                <div class="col-12 col-md-6 col-lg-5">
+                    <article
+                        class="schedule-card card-bk h-100 p-4 text-center d-flex flex-column justify-content-center">
+                        <h3 class="h4 mb-3">🌐 Plataforma Online</h3>
+                        <p class="mb-3">
+                            <span class="badge badge-bk fs-6 px-3 py-2">Disponible 24/7</span>
+                        </p>
+                        <p class="text-muted-bk mb-0">
+                            Acceso a catálogos, descargas y préstamos digitales las 24 horas del día,
+                            los 365 días del año.
+                        </p>
+                    </article>
                 </div>
 
-                <div class="schedule-card card-bk">
-                    <h3>🏢 Atención Presencial y Soporte</h3>
-                    <ul class="schedule-list">
-                        <li>
-                            <span>Lunes a Viernes:</span>
-                            <strong>08:00 AM - 08:00 PM</strong>
-                        </li>
-                        <li>
-                            <span>Sábados:</span>
-                            <strong>09:00 AM - 04:00 PM</strong>
-                        </li>
-                        <li>
-                            <span>Domingos y Festivos:</span>
-                            <strong>Cerrado</strong>
-                        </li>
-                    </ul>
+                <!-- Atención presencial -->
+                <div class="col-12 col-md-6 col-lg-5">
+                    <article class="schedule-card card-bk h-100 p-4">
+                        <h3 class="h4 mb-3 text-center">🏢 Atención Presencial y Soporte</h3>
+                        <ul class="schedule-list list-unstyled mb-0">
+                            <li
+                                class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-1 py-2 border-bottom">
+                                <span class="text-muted-bk">Lunes a Viernes:</span>
+                                <strong>08:00 AM - 08:00 PM</strong>
+                            </li>
+                            <li
+                                class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-1 py-2 border-bottom">
+                                <span class="text-muted-bk">Sábados:</span>
+                                <strong>09:00 AM - 04:00 PM</strong>
+                            </li>
+                            <li
+                                class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-1 py-2">
+                                <span class="text-muted-bk">Domingos y Festivos:</span>
+                                <strong class="text-gold">Cerrado</strong>
+                            </li>
+                        </ul>
+                    </article>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- 5. Cuenta-->
-    <section class="hero">
-        <div>
-            <h2>¿Listo para empezar tu próxima lectura?</h2>
-            <p class="text-muted-bk">Crea tu cuenta gratuita hoy mismo y accede sin límites a todo nuestro catálogo
-                digital.</p>
-            <a class="btn-gold">Realizar solicitud de tu próxima lectura.</a>
+    <section class="hero py-5">
+        <div class="container">
+            <div class="mx-auto text-center py-lg-4" style="max-width: 720px">
+                <p class="eyebrow mb-2">Únete hoy</p>
+                <h2 class="display-6 mb-3">¿Listo para empezar tu próxima lectura?</h2>
+                <p class="text-muted-bk fs-5 mb-4">
+                    Accede sin límites a todo nuestro catálogo digital.
+                </p>
+                <a class="btn btn-gold btn-lg px-4" href="./catalogo.html">
+                    Realizar solicitud de tu próxima lectura.
+                </a>
+            </div>
         </div>
     </section>
 
@@ -165,7 +224,7 @@
         </div>
     </footer>
 
-     <!-- Script para gestionar el cambio de tema -->
+    <!-- Script para gestionar el cambio de tema -->
     <script src="./js/tema.js"></script>
 </body>
 

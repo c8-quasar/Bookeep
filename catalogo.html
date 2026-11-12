@@ -1,686 +1,472 @@
 <!doctype html>
 <html lang="es" data-bs-theme="dark">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Catálogo | Bookeep Biblioteca</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./css/base.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css"
-    />
-  </head>
-  <body class="hero">
-    <header class="topbar">
-      <div class="container d-flex align-items-center gap-3 py-2">
-        <a class="brand d-flex align-items-center gap-2" href="index.html">
-          <i class="bi bi-book-half text-gold fs-3"></i>
-          <span>BOOKEEP<small>BIBLIOTECA</small></span>
-        </a>
-        <nav class="d-none d-lg-flex gap-1 ms-3">
-          <a class="navlink" href="index.html">Inicio</a>
-          <a class="navlink active" href="catalogo.html">Catálogo</a>
-          <a class="navlink" href="admin.html">Administración</a>
-        </nav>
-        <div class="ms-auto d-flex align-items-center gap-2"></div>
-          <input
-            class="form-control form-control-sm d-none d-md-block"
-            style="width: 220px"
-            id="q"
-            type="search"
-            placeholder="Buscar título o autor"
-            aria-label="Buscar"
-          />
 
-           <button
-            class="btn btn-line btn-sm theme-btn"
-            id="themeToggleBtn"
-            data-theme-toggle
-            aria-label="Cambiar tema"
-          >
-            <i class="bi bi-moon-stars"></i><i class="bi bi-sun"></i>
-          </button>
-          <a
-            class="btn btn-gold btn-sm d-none d-sm-inline-block"
-            href="login.html"
-          >
-            Mi cuenta
-          </a>
-         
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo | Bookeep Biblioteca</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css" />
+</head>
+
+<body class="hero">
+  <header class="topbar">
+    <div class="container d-flex align-items-center gap-3 py-2">
+      <a class="brand d-flex align-items-center gap-2" href="index.html">
+        <i class="bi bi-book-half text-gold fs-3"></i>
+        <span>BOOKEEP<small>BIBLIOTECA</small></span>
+      </a>
+      <nav class="d-none d-lg-flex gap-1 ms-3">
+        <a class="navlink" href="index.html">Inicio</a>
+        <a class="navlink active" href="catalogo.html">Catálogo</a>
+        <a class="navlink" href="admin.html">Administración</a>
+      </nav>
+      <div class="ms-auto d-flex align-items-center gap-2"></div>
+      <input class="form-control form-control-sm d-none d-md-block" style="width: 220px" id="q" type="search"
+        placeholder="Buscar título o autor" aria-label="Buscar" />
+
+      <button class="btn btn-line btn-sm theme-btn" id="themeToggleBtn" data-theme-toggle aria-label="Cambiar tema">
+        <i class="bi bi-moon-stars"></i><i class="bi bi-sun"></i>
+      </button>
+      <a class="btn btn-gold btn-sm d-none d-sm-inline-block" href="login.html">
+        Mi cuenta
+      </a>
+
+    </div>
+    </div>
+  </header>
+
+  <nav class="tabbar d-lg-none">
+    <a href="index.html"><i class="bi bi-house"></i>Inicio</a>
+    <a class="active" href="catalogo.html"><i class="bi bi-book"></i>Catálogo</a>
+    <a href="admin.html"><i class="bi bi-gear"></i>Administración</a>
+  </nav>
+
+  <main>
+    <section class="container py-4">
+      <p class="eyebrow mb-1">Acervo central</p>
+      <h1 class="display-6">Catálogo General</h1>
+      <p class="text-muted-bk">
+        Explora los títulos disponibles y solicita tu préstamo en línea.
+      </p>
+
+      <!-- Filtros simulados -->
+      <div class="d-flex gap-2 overflow-auto pb-2 mb-4">
+        <button class="chip active">Todos</button>
+        <button class="chip">Narrativa</button>
+        <button class="chip">Tecnología</button>
+        <button class="chip">Ciencia</button>
+      </div>
+
+      <!-- Cuadrícula: 3 filas de 4 columnas (12 libros) -->
+      <div id="grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <!-- Fila 1, Libro 1 -->
+        <div class="col">
+          <article class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden">
+            <div>
+              <div class="cover" style="background-color: #2b1e1a">
+                Cien Años de Soledad
+              </div>
+              <div class="p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge badge-bk rounded-pill px-2 py-1">Narrativa</span>
+                  <small class="text-success fw-semibold"><i class="bi bi-check-circle-fill me-1"></i>Disponible</small>
+                </div>
+                <h5 class="mb-1 fs-6">Cien Años de Soledad</h5>
+                <p class="text-muted-bk small mb-2">Gabriel García Márquez</p>
+                <p class="small text-muted-bk mb-0">
+                  La obra cumbre del realismo mágico en Macondo.
+                </p>
+              </div>
+            </div>
+            <div class="p-3 pt-0">
+              <button class="btn btn-gold w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#prestamoModal">
+                <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Fila 1, Libro 2 -->
+        <div class="col">
+          <article class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden">
+            <div>
+              <div class="cover" style="background-color: #1a262b">
+                Clean Code
+              </div>
+              <div class="p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge badge-bk rounded-pill px-2 py-1">Tecnología</span>
+                  <small class="text-success fw-semibold"><i class="bi bi-check-circle-fill me-1"></i>Disponible</small>
+                </div>
+                <h5 class="mb-1 fs-6">Clean Code</h5>
+                <p class="text-muted-bk small mb-2">Robert C. Martin</p>
+                <p class="small text-muted-bk mb-0">
+                  Reglas y prácticas para escribir código legible.
+                </p>
+              </div>
+            </div>
+            <div class="p-3 pt-0">
+              <button class="btn btn-gold w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#prestamoModal">
+                <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Fila 1, Libro 3 -->
+        <div class="col">
+          <article class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden">
+            <div>
+              <div class="cover" style="background-color: #261a2b">
+                Cosmos
+              </div>
+              <div class="p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge badge-bk rounded-pill px-2 py-1">Ciencia</span>
+                  <small class="badge-wine px-2 py-1 rounded"><i class="bi bi-clock me-1"></i>En préstamo</small>
+                </div>
+                <h5 class="mb-1 fs-6">Cosmos</h5>
+                <p class="text-muted-bk small mb-2">Carl Sagan</p>
+                <p class="small text-muted-bk mb-0">
+                  Un viaje fascinante por el universo y la ciencia.
+                </p>
+              </div>
+            </div>
+            <div class="p-3 pt-0">
+              <button class="btn btn-line w-100 btn-sm" disabled>
+                <i class="bi bi-hourglass-split me-1"></i> Turno reservado
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Fila 1, Libro 4 -->
+        <div class="col">
+          <article class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden">
+            <div>
+              <div class="cover" style="background-color: #1e2b1a">
+                Don Quijote
+              </div>
+              <div class="p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge badge-bk rounded-pill px-2 py-1">Narrativa</span>
+                  <small class="text-success fw-semibold"><i class="bi bi-check-circle-fill me-1"></i>Disponible</small>
+                </div>
+                <h5 class="mb-1 fs-6">Don Quijote de la Mancha</h5>
+                <p class="text-muted-bk small mb-2">Miguel de Cervantes</p>
+                <p class="small text-muted-bk mb-0">
+                  Las célebres aventuras del hidalgo manchego.
+                </p>
+              </div>
+            </div>
+            <div class="p-3 pt-0">
+              <button class="btn btn-gold w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#prestamoModal">
+                <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Fila 2, Libro 5 -->
+        <div class="col">
+          <article class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden">
+            <div>
+              <div class="cover" style="background-color: #2b291a">
+                Data-Intensive Apps
+              </div>
+              <div class="p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge badge-bk rounded-pill px-2 py-1">Tecnología</span>
+                  <small class="text-success fw-semibold"><i class="bi bi-check-circle-fill me-1"></i>Disponible</small>
+                </div>
+                <h5 class="mb-1 fs-6">Designing Data-Intensive Apps</h5>
+                <p class="text-muted-bk small mb-2">Martin Kleppmann</p>
+                <p class="small text-muted-bk mb-0">
+                  Arquitectura de datos, escalabilidad y sistemas.
+                </p>
+              </div>
+            </div>
+            <div class="p-3 pt-0">
+              <button class="btn btn-gold w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#prestamoModal">
+                <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Fila 2, Libro 6 -->
+        <div class="col">
+          <article class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden">
+            <div>
+              <div class="cover" style="background-color: #1a2b27">
+                El Gen Egoísta
+              </div>
+              <div class="p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge badge-bk rounded-pill px-2 py-1">Ciencia</span>
+                  <small class="text-success fw-semibold"><i class="bi bi-check-circle-fill me-1"></i>Disponible</small>
+                </div>
+                <h5 class="mb-1 fs-6">El Gen Egoísta</h5>
+                <p class="text-muted-bk small mb-2">Richard Dawkins</p>
+                <p class="small text-muted-bk mb-0">
+                  Perspectiva evolutiva centrada en la genética.
+                </p>
+              </div>
+            </div>
+            <div class="p-3 pt-0">
+              <button class="btn btn-gold w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#prestamoModal">
+                <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Fila 2, Libro 7 -->
+        <div class="col">
+          <article class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden">
+            <div>
+              <div class="cover" style="background-color: #2b1a1a">
+                Fahrenheit 451
+              </div>
+              <div class="p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge badge-bk rounded-pill px-2 py-1">Narrativa</span>
+                  <small class="badge-wine px-2 py-1 rounded"><i class="bi bi-clock me-1"></i>En préstamo</small>
+                </div>
+                <h5 class="mb-1 fs-6">Fahrenheit 451</h5>
+                <p class="text-muted-bk small mb-2">Ray Bradbury</p>
+                <p class="small text-muted-bk mb-0">
+                  Una sociedad distópica donde los libros están prohibidos.
+                </p>
+              </div>
+            </div>
+            <div class="p-3 pt-0">
+              <button class="btn btn-line w-100 btn-sm" disabled>
+                <i class="bi bi-hourglass-split me-1"></i> Turno reservado
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Fila 2, Libro 8 -->
+        <div class="col">
+          <article class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden">
+            <div>
+              <div class="cover" style="background-color: #1a1f2b">
+                Refactoring
+              </div>
+              <div class="p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge badge-bk rounded-pill px-2 py-1">Tecnología</span>
+                  <small class="text-success fw-semibold"><i class="bi bi-check-circle-fill me-1"></i>Disponible</small>
+                </div>
+                <h5 class="mb-1 fs-6">Refactoring</h5>
+                <p class="text-muted-bk small mb-2">Martin Fowler</p>
+                <p class="small text-muted-bk mb-0">
+                  Mejorar el diseño del código existente paso a paso.
+                </p>
+              </div>
+            </div>
+            <div class="p-3 pt-0">
+              <button class="btn btn-gold w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#prestamoModal">
+                <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Fila 3, Libro 9 -->
+        <div class="col">
+          <article class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden">
+            <div>
+              <div class="cover" style="background-color: #2b251a">
+                Breve Historia del Tiempo
+              </div>
+              <div class="p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge badge-bk rounded-pill px-2 py-1">Ciencia</span>
+                  <small class="text-success fw-semibold"><i class="bi bi-check-circle-fill me-1"></i>Disponible</small>
+                </div>
+                <h5 class="mb-1 fs-6">Breve Historia del Tiempo</h5>
+                <p class="text-muted-bk small mb-2">Stephen Hawking</p>
+                <p class="small text-muted-bk mb-0">
+                  Del Big Bang a los agujeros negros explicados al público.
+                </p>
+              </div>
+            </div>
+            <div class="p-3 pt-0">
+              <button class="btn btn-gold w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#prestamoModal">
+                <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Fila 3, Libro 10 -->
+        <div class="col">
+          <article class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden">
+            <div>
+              <div class="cover" style="background-color: #1a2b1e">
+                Crimen y Castigo
+              </div>
+              <div class="p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge badge-bk rounded-pill px-2 py-1">Narrativa</span>
+                  <small class="text-success fw-semibold"><i class="bi bi-check-circle-fill me-1"></i>Disponible</small>
+                </div>
+                <h5 class="mb-1 fs-6">Crimen y Castigo</h5>
+                <p class="text-muted-bk small mb-2">Fiódor Dostoyevski</p>
+                <p class="small text-muted-bk mb-0">
+                  Un análisis psicológico profundo de la culpa y la moral.
+                </p>
+              </div>
+            </div>
+            <div class="p-3 pt-0">
+              <button class="btn btn-gold w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#prestamoModal">
+                <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Fila 3, Libro 11 -->
+        <div class="col">
+          <article class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden">
+            <div>
+              <div class="cover" style="background-color: #241a2b">
+                The Pragmatic Programmer
+              </div>
+              <div class="p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge badge-bk rounded-pill px-2 py-1">Tecnología</span>
+                  <small class="text-success fw-semibold"><i class="bi bi-check-circle-fill me-1"></i>Disponible</small>
+                </div>
+                <h5 class="mb-1 fs-6">The Pragmatic Programmer</h5>
+                <p class="text-muted-bk small mb-2">
+                  Andrew Hunt & David Thomas
+                </p>
+                <p class="small text-muted-bk mb-0">
+                  Guía clásica para convertirte en un mejor desarrollador.
+                </p>
+              </div>
+            </div>
+            <div class="p-3 pt-0">
+              <button class="btn btn-gold w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#prestamoModal">
+                <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Fila 3, Libro 12 -->
+        <div class="col">
+          <article class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden">
+            <div>
+              <div class="cover" style="background-color: #2b1a27">
+                El Tunel
+              </div>
+              <div class="p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="badge badge-bk rounded-pill px-2 py-1">Narrativa</span>
+                  <small class="text-success fw-semibold"><i class="bi bi-check-circle-fill me-1"></i>Disponible</small>
+                </div>
+                <h5 class="mb-1 fs-6">El Túnel</h5>
+                <p class="text-muted-bk small mb-2">Ernesto Sabato</p>
+                <p class="small text-muted-bk mb-0">
+                  Una intensa novela psicológica sobre la soledad y la
+                  obsesión.
+                </p>
+              </div>
+            </div>
+            <div class="p-3 pt-0">
+              <button class="btn btn-gold w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#prestamoModal">
+                <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
+              </button>
+            </div>
+          </article>
         </div>
       </div>
-    </header>
 
-    <nav class="tabbar d-lg-none">
-      <a href="index.html"><i class="bi bi-house"></i>Inicio</a>
-      <a class="active" href="catalogo.html"
-        ><i class="bi bi-book"></i>Catálogo</a
-      >
-      <a href="admin.html"><i class="bi bi-gear"></i>Administración</a>
-    </nav>
+      <p id="empty" class="text-muted-bk d-none">
+        No encontramos libros con ese filtro. Prueba otra búsqueda o
+        categoría.
+      </p>
+    </section>
+  </main>
 
-    <main>
-      <section class="container py-4">
-        <p class="eyebrow mb-1">Acervo central</p>
-        <h1 class="display-6">Catálogo General</h1>
-        <p class="text-muted-bk">
-          Explora los títulos disponibles y solicita tu préstamo en línea.
-        </p>
-
-        <!-- Filtros simulados -->
-        <div class="d-flex gap-2 overflow-auto pb-2 mb-4">
-          <button class="chip active">Todos</button>
-          <button class="chip">Narrativa</button>
-          <button class="chip">Tecnología</button>
-          <button class="chip">Ciencia</button>
+  <!-- Modal de Solicitud de Préstamo -->
+  <div class="modal fade" id="prestamoModal" aria-labelledby="prestamoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content card-bk border">
+        <div class="modal-header border-bottom border-secondary">
+          <h5 class="modal-title serif text-gold" id="prestamoModalLabel">
+            Solicitar Préstamo en Línea
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="nombreUsuario" class="form-label">Nombre del Lector</label>
+              <input type="text" class="form-control form-control-sm" id="nombreUsuario" placeholder="Ej. Ana Pérez"
+                required />
+            </div>
+            <div class="mb-3">
+              <label for="emailUsuario" class="form-label">Correo Electrónico</label>
+              <input type="email" class="form-control form-control-sm" id="emailUsuario"
+                placeholder="correo@ejemplo.com" required />
+            </div>
+            <div class="mb-3">
+              <label for="fechaRetiro" class="form-label">Fecha estimada de retiro</label>
+              <input type="date" class="form-control form-control-sm" id="fechaRetiro" required />
+            </div>
+            <div class="mb-3">
+              <label for="diasPrestamo" class="form-label">Plazo de préstamo</label>
+              <select class="form-select form-select-sm" id="diasPrestamo">
+                <option value="7">7 días</option>
+                <option value="14" selected>14 días</option>
+                <option value="30">30 días</option>
+              </select>
+              <button type="button" class="btn btn-gold btn-sm" data-bs-dismiss="modal">
+                Confirmar Solicitud
+              </button>
+            </div>
+          </form>
+          <form-check>
+            <input type="checkbox" id="check" class="check" checked />
 
-        <!-- Cuadrícula: 3 filas de 4 columnas (12 libros) -->
-        <div id="grid" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-          <!-- Fila 1, Libro 1 -->
-          <div class="col">
-            <article
-              class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden"
-            >
-              <div>
-                <div class="cover" style="background-color: #2b1e1a">
-                  Cien Años de Soledad
-                </div>
-                <div class="p-3">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-2"
-                  >
-                    <span class="badge badge-bk rounded-pill px-2 py-1"
-                      >Narrativa</span
-                    >
-                    <small class="text-success fw-semibold"
-                      ><i class="bi bi-check-circle-fill me-1"></i
-                      >Disponible</small
-                    >
-                  </div>
-                  <h5 class="mb-1 fs-6">Cien Años de Soledad</h5>
-                  <p class="text-muted-bk small mb-2">Gabriel García Márquez</p>
-                  <p class="small text-muted-bk mb-0">
-                    La obra cumbre del realismo mágico en Macondo.
-                  </p>
-                </div>
-              </div>
-              <div class="p-3 pt-0">
-                <button
-                  class="btn btn-gold w-100 btn-sm"
-                  data-bs-toggle="modal"
-                  data-bs-target="#prestamoModal"
-                >
-                  <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
-                </button>
-              </div>
-            </article>
-          </div>
-
-          <!-- Fila 1, Libro 2 -->
-          <div class="col">
-            <article
-              class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden"
-            >
-              <div>
-                <div class="cover" style="background-color: #1a262b">
-                  Clean Code
-                </div>
-                <div class="p-3">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-2"
-                  >
-                    <span class="badge badge-bk rounded-pill px-2 py-1"
-                      >Tecnología</span
-                    >
-                    <small class="text-success fw-semibold"
-                      ><i class="bi bi-check-circle-fill me-1"></i
-                      >Disponible</small
-                    >
-                  </div>
-                  <h5 class="mb-1 fs-6">Clean Code</h5>
-                  <p class="text-muted-bk small mb-2">Robert C. Martin</p>
-                  <p class="small text-muted-bk mb-0">
-                    Reglas y prácticas para escribir código legible.
-                  </p>
-                </div>
-              </div>
-              <div class="p-3 pt-0">
-                <button
-                  class="btn btn-gold w-100 btn-sm"
-                  data-bs-toggle="modal"
-                  data-bs-target="#prestamoModal"
-                >
-                  <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
-                </button>
-              </div>
-            </article>
-          </div>
-
-          <!-- Fila 1, Libro 3 -->
-          <div class="col">
-            <article
-              class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden"
-            >
-              <div>
-                <div class="cover" style="background-color: #261a2b">
-                  Cosmos
-                </div>
-                <div class="p-3">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-2"
-                  >
-                    <span class="badge badge-bk rounded-pill px-2 py-1"
-                      >Ciencia</span
-                    >
-                    <small class="badge-wine px-2 py-1 rounded"
-                      ><i class="bi bi-clock me-1"></i>En préstamo</small
-                    >
-                  </div>
-                  <h5 class="mb-1 fs-6">Cosmos</h5>
-                  <p class="text-muted-bk small mb-2">Carl Sagan</p>
-                  <p class="small text-muted-bk mb-0">
-                    Un viaje fascinante por el universo y la ciencia.
-                  </p>
-                </div>
-              </div>
-              <div class="p-3 pt-0">
-                <button class="btn btn-line w-100 btn-sm" disabled>
-                  <i class="bi bi-hourglass-split me-1"></i> Turno reservado
-                </button>
-              </div>
-            </article>
-          </div>
-
-          <!-- Fila 1, Libro 4 -->
-          <div class="col">
-            <article
-              class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden"
-            >
-              <div>
-                <div class="cover" style="background-color: #1e2b1a">
-                  Don Quijote
-                </div>
-                <div class="p-3">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-2"
-                  >
-                    <span class="badge badge-bk rounded-pill px-2 py-1"
-                      >Narrativa</span
-                    >
-                    <small class="text-success fw-semibold"
-                      ><i class="bi bi-check-circle-fill me-1"></i
-                      >Disponible</small
-                    >
-                  </div>
-                  <h5 class="mb-1 fs-6">Don Quijote de la Mancha</h5>
-                  <p class="text-muted-bk small mb-2">Miguel de Cervantes</p>
-                  <p class="small text-muted-bk mb-0">
-                    Las célebres aventuras del hidalgo manchego.
-                  </p>
-                </div>
-              </div>
-              <div class="p-3 pt-0">
-                <button
-                  class="btn btn-gold w-100 btn-sm"
-                  data-bs-toggle="modal"
-                  data-bs-target="#prestamoModal"
-                >
-                  <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
-                </button>
-              </div>
-            </article>
-          </div>
-
-          <!-- Fila 2, Libro 5 -->
-          <div class="col">
-            <article
-              class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden"
-            >
-              <div>
-                <div class="cover" style="background-color: #2b291a">
-                  Data-Intensive Apps
-                </div>
-                <div class="p-3">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-2"
-                  >
-                    <span class="badge badge-bk rounded-pill px-2 py-1"
-                      >Tecnología</span
-                    >
-                    <small class="text-success fw-semibold"
-                      ><i class="bi bi-check-circle-fill me-1"></i
-                      >Disponible</small
-                    >
-                  </div>
-                  <h5 class="mb-1 fs-6">Designing Data-Intensive Apps</h5>
-                  <p class="text-muted-bk small mb-2">Martin Kleppmann</p>
-                  <p class="small text-muted-bk mb-0">
-                    Arquitectura de datos, escalabilidad y sistemas.
-                  </p>
-                </div>
-              </div>
-              <div class="p-3 pt-0">
-                <button
-                  class="btn btn-gold w-100 btn-sm"
-                  data-bs-toggle="modal"
-                  data-bs-target="#prestamoModal"
-                >
-                  <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
-                </button>
-              </div>
-            </article>
-          </div>
-
-          <!-- Fila 2, Libro 6 -->
-          <div class="col">
-            <article
-              class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden"
-            >
-              <div>
-                <div class="cover" style="background-color: #1a2b27">
-                  El Gen Egoísta
-                </div>
-                <div class="p-3">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-2"
-                  >
-                    <span class="badge badge-bk rounded-pill px-2 py-1"
-                      >Ciencia</span
-                    >
-                    <small class="text-success fw-semibold"
-                      ><i class="bi bi-check-circle-fill me-1"></i
-                      >Disponible</small
-                    >
-                  </div>
-                  <h5 class="mb-1 fs-6">El Gen Egoísta</h5>
-                  <p class="text-muted-bk small mb-2">Richard Dawkins</p>
-                  <p class="small text-muted-bk mb-0">
-                    Perspectiva evolutiva centrada en la genética.
-                  </p>
-                </div>
-              </div>
-              <div class="p-3 pt-0">
-                <button
-                  class="btn btn-gold w-100 btn-sm"
-                  data-bs-toggle="modal"
-                  data-bs-target="#prestamoModal"
-                >
-                  <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
-                </button>
-              </div>
-            </article>
-          </div>
-
-          <!-- Fila 2, Libro 7 -->
-          <div class="col">
-            <article
-              class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden"
-            >
-              <div>
-                <div class="cover" style="background-color: #2b1a1a">
-                  Fahrenheit 451
-                </div>
-                <div class="p-3">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-2"
-                  >
-                    <span class="badge badge-bk rounded-pill px-2 py-1"
-                      >Narrativa</span
-                    >
-                    <small class="badge-wine px-2 py-1 rounded"
-                      ><i class="bi bi-clock me-1"></i>En préstamo</small
-                    >
-                  </div>
-                  <h5 class="mb-1 fs-6">Fahrenheit 451</h5>
-                  <p class="text-muted-bk small mb-2">Ray Bradbury</p>
-                  <p class="small text-muted-bk mb-0">
-                    Una sociedad distópica donde los libros están prohibidos.
-                  </p>
-                </div>
-              </div>
-              <div class="p-3 pt-0">
-                <button class="btn btn-line w-100 btn-sm" disabled>
-                  <i class="bi bi-hourglass-split me-1"></i> Turno reservado
-                </button>
-              </div>
-            </article>
-          </div>
-
-          <!-- Fila 2, Libro 8 -->
-          <div class="col">
-            <article
-              class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden"
-            >
-              <div>
-                <div class="cover" style="background-color: #1a1f2b">
-                  Refactoring
-                </div>
-                <div class="p-3">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-2"
-                  >
-                    <span class="badge badge-bk rounded-pill px-2 py-1"
-                      >Tecnología</span
-                    >
-                    <small class="text-success fw-semibold"
-                      ><i class="bi bi-check-circle-fill me-1"></i
-                      >Disponible</small
-                    >
-                  </div>
-                  <h5 class="mb-1 fs-6">Refactoring</h5>
-                  <p class="text-muted-bk small mb-2">Martin Fowler</p>
-                  <p class="small text-muted-bk mb-0">
-                    Mejorar el diseño del código existente paso a paso.
-                  </p>
-                </div>
-              </div>
-              <div class="p-3 pt-0">
-                <button
-                  class="btn btn-gold w-100 btn-sm"
-                  data-bs-toggle="modal"
-                  data-bs-target="#prestamoModal"
-                >
-                  <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
-                </button>
-              </div>
-            </article>
-          </div>
-
-          <!-- Fila 3, Libro 9 -->
-          <div class="col">
-            <article
-              class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden"
-            >
-              <div>
-                <div class="cover" style="background-color: #2b251a">
-                  Breve Historia del Tiempo
-                </div>
-                <div class="p-3">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-2"
-                  >
-                    <span class="badge badge-bk rounded-pill px-2 py-1"
-                      >Ciencia</span
-                    >
-                    <small class="text-success fw-semibold"
-                      ><i class="bi bi-check-circle-fill me-1"></i
-                      >Disponible</small
-                    >
-                  </div>
-                  <h5 class="mb-1 fs-6">Breve Historia del Tiempo</h5>
-                  <p class="text-muted-bk small mb-2">Stephen Hawking</p>
-                  <p class="small text-muted-bk mb-0">
-                    Del Big Bang a los agujeros negros explicados al público.
-                  </p>
-                </div>
-              </div>
-              <div class="p-3 pt-0">
-                <button
-                  class="btn btn-gold w-100 btn-sm"
-                  data-bs-toggle="modal"
-                  data-bs-target="#prestamoModal"
-                >
-                  <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
-                </button>
-              </div>
-            </article>
-          </div>
-
-          <!-- Fila 3, Libro 10 -->
-          <div class="col">
-            <article
-              class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden"
-            >
-              <div>
-                <div class="cover" style="background-color: #1a2b1e">
-                  Crimen y Castigo
-                </div>
-                <div class="p-3">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-2"
-                  >
-                    <span class="badge badge-bk rounded-pill px-2 py-1"
-                      >Narrativa</span
-                    >
-                    <small class="text-success fw-semibold"
-                      ><i class="bi bi-check-circle-fill me-1"></i
-                      >Disponible</small
-                    >
-                  </div>
-                  <h5 class="mb-1 fs-6">Crimen y Castigo</h5>
-                  <p class="text-muted-bk small mb-2">Fiódor Dostoyevski</p>
-                  <p class="small text-muted-bk mb-0">
-                    Un análisis psicológico profundo de la culpa y la moral.
-                  </p>
-                </div>
-              </div>
-              <div class="p-3 pt-0">
-                <button
-                  class="btn btn-gold w-100 btn-sm"
-                  data-bs-toggle="modal"
-                  data-bs-target="#prestamoModal"
-                >
-                  <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
-                </button>
-              </div>
-            </article>
-          </div>
-
-          <!-- Fila 3, Libro 11 -->
-          <div class="col">
-            <article
-              class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden"
-            >
-              <div>
-                <div class="cover" style="background-color: #241a2b">
-                  The Pragmatic Programmer
-                </div>
-                <div class="p-3">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-2"
-                  >
-                    <span class="badge badge-bk rounded-pill px-2 py-1"
-                      >Tecnología</span
-                    >
-                    <small class="text-success fw-semibold"
-                      ><i class="bi bi-check-circle-fill me-1"></i
-                      >Disponible</small
-                    >
-                  </div>
-                  <h5 class="mb-1 fs-6">The Pragmatic Programmer</h5>
-                  <p class="text-muted-bk small mb-2">
-                    Andrew Hunt & David Thomas
-                  </p>
-                  <p class="small text-muted-bk mb-0">
-                    Guía clásica para convertirte en un mejor desarrollador.
-                  </p>
-                </div>
-              </div>
-              <div class="p-3 pt-0">
-                <button
-                  class="btn btn-gold w-100 btn-sm"
-                  data-bs-toggle="modal"
-                  data-bs-target="#prestamoModal"
-                >
-                  <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
-                </button>
-              </div>
-            </article>
-          </div>
-
-          <!-- Fila 3, Libro 12 -->
-          <div class="col">
-            <article
-              class="card-bk h-100 d-flex flex-column justify-content-between overflow-hidden"
-            >
-              <div>
-                <div class="cover" style="background-color: #2b1a27">
-                  El Tunel
-                </div>
-                <div class="p-3">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-2"
-                  >
-                    <span class="badge badge-bk rounded-pill px-2 py-1"
-                      >Narrativa</span
-                    >
-                    <small class="text-success fw-semibold"
-                      ><i class="bi bi-check-circle-fill me-1"></i
-                      >Disponible</small
-                    >
-                  </div>
-                  <h5 class="mb-1 fs-6">El Túnel</h5>
-                  <p class="text-muted-bk small mb-2">Ernesto Sabato</p>
-                  <p class="small text-muted-bk mb-0">
-                    Una intensa novela psicológica sobre la soledad y la
-                    obsesión.
-                  </p>
-                </div>
-              </div>
-              <div class="p-3 pt-0">
-                <button
-                  class="btn btn-gold w-100 btn-sm"
-                  data-bs-toggle="modal"
-                  data-bs-target="#prestamoModal"
-                >
-                  <i class="bi bi-bookmark-plus me-1"></i> Agendar préstamo
-                </button>
-              </div>
-            </article>
-          </div>
+            <label>acepto los términos y condiciones</label>
+          </form-check>
         </div>
-
-        <p id="empty" class="text-muted-bk d-none">
-          No encontramos libros con ese filtro. Prueba otra búsqueda o
-          categoría.
-        </p>
-      </section>
-    </main>
-
-    <!-- Modal de Solicitud de Préstamo -->
-    <div
-      class="modal fade"
-      id="prestamoModal"
-      aria-labelledby="prestamoModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content card-bk border">
-          <div class="modal-header border-bottom border-secondary">
-            <h5 class="modal-title serif text-gold" id="prestamoModalLabel">
-              Solicitar Préstamo en Línea
-            </h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-              aria-label="Cerrar"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="mb-3">
-                <label for="nombreUsuario" class="form-label"
-                  >Nombre del Lector</label
-                >
-                <input
-                  type="text"
-                  class="form-control form-control-sm"
-                  id="nombreUsuario"
-                  placeholder="Ej. Ana Pérez"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="emailUsuario" class="form-label"
-                  >Correo Electrónico</label
-                >
-                <input
-                  type="email"
-                  class="form-control form-control-sm"
-                  id="emailUsuario"
-                  placeholder="correo@ejemplo.com"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="fechaRetiro" class="form-label"
-                  >Fecha estimada de retiro</label
-                >
-                <input
-                  type="date"
-                  class="form-control form-control-sm"
-                  id="fechaRetiro"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="diasPrestamo" class="form-label"
-                  >Plazo de préstamo</label
-                >
-                <select class="form-select form-select-sm" id="diasPrestamo">
-                  <option value="7">7 días</option>
-                  <option value="14" selected>14 días</option>
-                  <option value="30">30 días</option>
-                </select>
-                <button
-                  type="button"
-                  class="btn btn-gold btn-sm"
-                  data-bs-dismiss="modal"
-                >
-                  Confirmar Solicitud
-                </button>
-              </div>
-            </form>
-            <form-check>
-              <input type="checkbox" id="check" class="check" checked />
-
-              <label>acepto los términos y condiciones</label>
-            </form-check>
-          </div>
-          <div class="modal-footer border-top border-secondary">
-            <button
-              type="button"
-              class="btn btn-line btn-sm"
-              data-bs-dismiss="modal"
-            >
-              Cancelar
-            </button>
-                        <button
-              type="button"
-              class="btn btn-line btn-sm"
-              data-bs-dismiss="modal"
-            >
-              Enviar
-            </button>
-          </div>
+        <div class="modal-footer border-top border-secondary">
+          <button type="button" class="btn btn-line btn-sm" data-bs-dismiss="modal">
+            Cancelar
+          </button>
+          <button type="button" class="btn btn-line btn-sm" data-bs-dismiss="modal">
+            Enviar
+          </button>
         </div>
       </div>
     </div>
+  </div>
 
-    <footer class="mt-5 py-4">
-      <div
-        class="container d-flex flex-column flex-md-row justify-content-between gap-2"
-      >
-        <span class="serif text-gold fs-5">Bookeep</span>
-        <span>Colecciones, préstamos y acervo bibliográfico.</span>
-        <span>© 2026 Bookeep Biblioteca</span>
-      </div>
-    </footer>
+  <footer class="mt-5 py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <span class="serif text-gold fs-5">Bookeep</span>
+      <span>Colecciones, préstamos y acervo bibliográfico.</span>
+      <span>© 2026 Bookeep Biblioteca</span>
+    </div>
+  </footer>
 
-    <!-- Script para gestionar el cambio de tema -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./js/tema.js"></script>
-  </body>
+  <!-- Script para gestionar el cambio de tema -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/tema.js"></script>
+</body>
+
 </html>
