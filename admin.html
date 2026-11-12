@@ -19,42 +19,45 @@
     <link href="./css/base.css" rel="stylesheet">
 </head>
 
-<body data-page="admin">
+<body data-page="admin" class="hero">
 
+ <header class="topbar">
+      <div class="container d-flex align-items-center gap-3 py-2">
+        <a class="brand d-flex align-items-center gap-2" href="index.html">
+          <i class="bi bi-book-half text-gold fs-3"></i>
+          <span>BOOKEEP<small>BIBLIOTECA</small></span>
+        </a>
+        <nav class="d-none d-lg-flex gap-1 ms-3">
+          <a class="navlink" href="index.html">Inicio</a>
+          <a class="navlink active" href="catalogo.html">Catálogo</a>
+          <a class="navlink" href="admin.html">Administración</a>
+        </nav>
+        <div class="ms-auto d-flex align-items-center gap-2"></div>
+          <input
+            class="form-control form-control-sm d-none d-md-block"
+            style="width: 220px"
+            id="q"
+            type="search"
+            placeholder="Buscar título o autor"
+            aria-label="Buscar"
+          />
 
-    <header class="topbar">
-        <div class="container d-flex align-items-center justify-content-between py-3">
-
-            <a href="index.html" class="brand">
-                BIBLIOWEB
-                <small>BIBLIOTECA</small>
-            </a>
-
-            <!-- Enlaces: se ocultan en celular (ahí se usa la barra inferior) -->
-            <nav class="d-none d-lg-flex gap-1" aria-label="Navegación principal">
-                <a href="index.html" class="navlink">Inicio</a>
-                <a href="catalogo.html" class="navlink">Catálogo</a>
-                <a href="admin.html" class="navlink active" aria-current="page">Administración</a>
-            </nav>
-
-            <div class="d-flex gap-2">
-                 <!-- Botón para cambiar entre tema claro y oscuro (Debe estar en todas las paginas)-->
-                <button class="btn btn-line btn-sm theme-btn" data-theme-toggle aria-label="Cambiar tema">
-                    <i class="bi bi-moon-stars"></i>
-                    <i class="bi bi-sun"></i>
-                </button>
-            
-                <!-- Cerrar sesión: lo conecta js/auth.js (Integrante 1) -->
-               <button type="button" class="btn btn-wine" id="logout">
-                    <i class="bi bi-box-arrow-right"></i>
-                    Cerrar sesión
-                </button>
-                    </div>
-            </div>
-
+           <button
+            class="btn btn-line btn-sm theme-btn"
+            id="themeToggleBtn"
+            data-theme-toggle
+            aria-label="Cambiar tema"
+          >
+            <i class="bi bi-moon-stars"></i><i class="bi bi-sun"></i>
+          </button>
+           <a class="btn btn-gold btn-sm d-none d-sm-inline-block" id="logout">
+    <i class="bi bi-box-arrow-right"></i>
+    Cerrar sesión
+           </a>
+         
         </div>
+      </div>
     </header>
-
     <main class="container py-4 py-lg-5">
 
         <div class="mb-4">
@@ -309,10 +312,14 @@
 
     </main>
 
-    <footer class="py-4">
-        <div class="container text-center">
-            &copy; 2026 BiblioWeb — Prototipo educativo
-        </div>
+    <footer class="mt-5 py-4">
+      <div
+        class="container d-flex flex-column flex-md-row justify-content-between gap-2"
+      >
+        <span class="serif text-gold fs-5">Bookeep</span>
+        <span>Colecciones, préstamos y acervo bibliográfico.</span>
+        <span>© 2026 Bookeep Biblioteca</span>
+      </div>
     </footer>
 
 

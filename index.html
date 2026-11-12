@@ -17,27 +17,42 @@
 
 <body>
     <!-- 1. Header-->
-    <header class="topbar">
-        <div class="container d-flex align-items-center gap-3 py-2">
-            <a class="brand d-flex align-items-center gap-2" href="index.html">
-                <i class="bi bi-book-half text-gold fs-3"></i>
-                <span>BOOKEEP<small>BIBLIOTECA</small></span>
-            </a>
-            <nav class="d-none d-lg-flex gap-1 ms-3">
-                <a class="navlink" href="index.html">Inicio</a>
-                <a class="navlink active" href="catalogo.html">Catálogo</a>
-                <a class="navlink" href="admin.html">Administración</a>
-            </nav>
-            <div class="ms-auto d-flex align-items-center gap-2">
-                <input class="form-control form-control-sm d-none d-md-block" style="width: 220px" id="q" type="search"
-                    placeholder="Buscar título o autor" aria-label="Buscar" />
-                <a class="btn btn-gold btn-sm d-none d-sm-inline-block" href="login.html">Mi cuenta </a>
-                <button class="btn btn-line btn-sm theme-btn" id="themeToggleBtn" data-theme-toggle
-                    aria-label="Cambiar tema">
-                    <i class="bi bi-moon-stars"></i><i class="bi bi-sun"></i>
-                </button>
-            </div>
+     <header class="topbar">
+      <div class="container d-flex align-items-center gap-3 py-2">
+        <a class="brand d-flex align-items-center gap-2" href="index.html">
+          <i class="bi bi-book-half text-gold fs-3"></i>
+          <span>BOOKEEP<small>BIBLIOTECA</small></span>
+        </a>
+        <nav class="d-none d-lg-flex gap-1 ms-3">
+          <a class="navlink" href="index.html">Inicio</a>
+          <a class="navlink active" href="catalogo.html">Catálogo</a>
+          <a class="navlink" href="admin.html">Administración</a>
+        </nav>
+        <div class="ms-auto d-flex align-items-center gap-2"></div>
+          <input
+            class="form-control form-control-sm d-none d-md-block"
+            style="width: 220px"
+            id="q"
+            type="search"
+            placeholder="Buscar título o autor"
+            aria-label="Buscar"/>
+
+           <button
+            class="btn btn-line btn-sm theme-btn"
+            id="themeToggleBtn"
+            data-theme-toggle
+            aria-label="Cambiar tema">
+            <i class="bi bi-moon-stars"></i><i class="bi bi-sun"></i>
+          </button>
+          <a
+            class="btn btn-gold btn-sm d-none d-sm-inline-block"
+            href="login.html"
+          >
+            Mi cuenta
+          </a>
+         
         </div>
+      </div>
     </header>
 
     <!-- 2. Section firts-->
@@ -165,6 +180,8 @@
         </div>
     </footer>
 
+     <!-- Script para gestionar el cambio de tema -->
+    <script src="./js/tema.js"></script>
 </body>
 
 </html>
