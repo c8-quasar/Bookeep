@@ -6,9 +6,9 @@
     --bk-gold: #D4AF37;
     --bk-wine: #9E2A2B;
     --bk-text: #e8e2d6;
-    --bk-muted: #a39a88
+    --bk-muted: #a39a88;
         /* Variables de Bootstrap */
-        --bs-body-bg: var(--bk-bg);
+    --bs-body-bg: var(--bk-bg);
     --bs-body-color: var(--bk-text);
     --bs-secondary-color: var(--bk-muted);
     --bs-secondary-bg: var(--bk-surface);
@@ -41,6 +41,7 @@
     --bk-gold: #9a7512;
     --bk-wine: #9E2A2B;
     --bk-text: #2a2420;
+    --bk-muted: #6b6254;
     /* Variables de Bootstrap */
 
     --bs-body-color: var(--bk-text);
@@ -49,6 +50,7 @@
     --bs-tertiary-bg: var(--bk-surface);
     --bs-border-color: var(--bk-line);
     --bs-emphasis-color: var(--bk-text);
+    --bs-body-bg: var(--bk-bg);
 
     /* Tarjetas */
     --bs-card-bg: var(--bk-surface);
